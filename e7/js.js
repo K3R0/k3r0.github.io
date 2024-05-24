@@ -1,4 +1,6 @@
-let jsonData = await fetch('https://static.smilegatemegaport.com/gameRecord/epic7/epic7_user_world_eu.json')
+let request = await fetch('https://static.smilegatemegaport.com/gameRecord/epic7/epic7_user_world_eu.json');
+
+let jsonData = await request.json();
 
 let data = JSON.parse(jsonData)
 
