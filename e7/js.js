@@ -1,18 +1,4 @@
-let jsonData = fetch('https://static.smilegatemegaport.com/gameRecord/epic7/epic7_user_world_eu.json')
-.then((response)=>{
-    if(response.ok){
-        return response.json();
-    }
-    else{
-        throw new Error('Something went wrong!');
-    }
-})
-.then((data)=>{
-    console.log(data);
-})
-.catch((error)=>{
-    console.error(error);
-});
+let jsonData = await fetch('https://static.smilegatemegaport.com/gameRecord/epic7/epic7_user_world_eu.json')
 
 let data = JSON.parse(jsonData)
 
