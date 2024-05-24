@@ -1,8 +1,8 @@
 var data
 
 function load_player() {
-  let request = await fetch('https://static.smilegatemegaport.com/gameRecord/epic7/epic7_user_world_eu.json');
-  let jsonData = await request.json();
+  let request = fetch('https://static.smilegatemegaport.com/gameRecord/epic7/epic7_user_world_eu.json');
+  let jsonData = request.json();
   data = await JSON.parse(jsonData)
 }
 window.onload = load_player;
