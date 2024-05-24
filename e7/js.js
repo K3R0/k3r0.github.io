@@ -4,10 +4,10 @@ async function getJSON() {
   return fetch('https://static.smilegatemegaport.com/gameRecord/epic7/epic7_user_world_eu.json')
     .then(response => response.json())
     .then(json => JSON.parse(json))
-    .then(parsed => return parsed);
+    .then(parsed => {return parsed});
 }
 async function load_player() {
-  data = await this.getJSON();
+  data = await getJSON();
   alert("JSON loaded!");
 }
 
