@@ -1,8 +1,12 @@
-let request = await fetch('https://static.smilegatemegaport.com/gameRecord/epic7/epic7_user_world_eu.json');
+var data
 
-let jsonData = await request.json();
+function load_player() {
+  let request = await fetch('https://static.smilegatemegaport.com/gameRecord/epic7/epic7_user_world_eu.json');
+  let jsonData = await request.json();
+  data = await JSON.parse(jsonData)
+}
 
-let data = JSON.parse(jsonData)
+data = JSON.parse(jsonData)
 
 function search_player() {
   let input = document.getElementById('searchbar').value
