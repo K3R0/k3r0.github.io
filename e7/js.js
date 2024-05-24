@@ -7,7 +7,7 @@ async function getJSON() {
 }
 async function load_player() {
   data = await getJSON();
-  alert("JSON loaded!");
+  data = data.users
 }
 
 window.onload = load_player;
