@@ -6,8 +6,7 @@ async function getJSON() {
     .then(json => {return json});
 }
 async function load_player() {
-  const json = await getJSON();
-  data = JSON.parse(json)
+  data = await getJSON();
   alert("JSON loaded!");
 }
 
