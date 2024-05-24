@@ -18,14 +18,16 @@ function search_player() {
   input = input.toLowerCase();
   let x = document.querySelector('#list-holder');
   x.innerHTML = ""
+  let list_size = 0;
 
   for (i = 0; i < data.length; i++) {
     let obj = data[i];
 
-    if (obj.nick_nm.toLowerCase().includes(input)) {
+    if (obj.nick_nm.toLowerCase().includes(input) && list_size < 6) {
       const elem = document.createElement("li")
       elem.innerHTML = `${obj.nick_nm} - ${obj.nick_no}`
       x.appendChild(elem)
+      list_size++;
     }
   }
 }
