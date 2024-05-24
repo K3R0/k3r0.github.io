@@ -1,23 +1,16 @@
 var data
 
-async function load_player() {
-  fetch('https://static.smilegatemegaport.com/gameRecord/epic7/epic7_user_world_eu.json')
-    .then(response => {
-       if (!response.ok) {
-           throw new Error("HTTP error " + response.status);
-       }
-       return response.json();
-   })
-   .then(json => {
-       this.data = json;
-       data = JSON.parse(this.data)
-       alert("JSON Loaded!")
-   })
-   .catch(function () {
-       this.dataError = true;
-   })
-  
+async function getJSON() {
+  return fetch('https://static.smilegatemegaport.com/gameRecord/epic7/epic7_user_world_eu.json')
+    .then(response => response.json())
+    .then(json => JSON.parse(json))
+    .then(parsed => return parsed);
 }
+async function load_player() {
+  data = await this.getJSON();
+  alert("JSON loaded!");
+}
+
 window.onload = load_player;
 
 
