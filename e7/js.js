@@ -5,8 +5,8 @@ function load_player() {
   let jsonData = await request.json();
   data = await JSON.parse(jsonData)
 }
+window.onload = load_player;
 
-data = JSON.parse(jsonData)
 
 function search_player() {
   let input = document.getElementById('searchbar').value
